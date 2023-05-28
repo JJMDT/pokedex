@@ -5,13 +5,16 @@ const botonHeader = document.querySelectorAll('.btn-header');
 const pokemonIdInput = document.querySelector('#pokemonId');
 const buscarPokemonButton = document.querySelector('#buscarPokemon');
 const ver =document.getElementById('verTodo');
+const totalPokemon= document.getElementById('pokemonCount');
 
+let contador = 0;
 
 
 for (let i=1; i<= ver; i++){
     fetch(URL +i)
         .then((response) => response.json())
         .then(data => mostrarPokemon(data))
+       
 }
 
 function mostrarPokemon(pokemon) {
@@ -43,8 +46,11 @@ function mostrarPokemon(pokemon) {
     `;
 
     listaPokemon.append(div);
+    contador ++;
+    mostrarPokemonConsola(pokemon)
 }
 botonHeader.forEach(boton => boton.addEventListener('click', (event)=>{
+    contador = 0;
     const botonId = event.currentTarget.id;
     listaPokemon.innerHTML='';
     for (let i=1; i<= 151; i++){
@@ -62,5 +68,8 @@ botonHeader.forEach(boton => boton.addEventListener('click', (event)=>{
             } )
     }
 }))
+function mostrarPokemonConsola(pokemon) {
+    totalPokemon.innerHTML=`Nro de resultado ${contador} pokemon`
+    
 
-
+}
