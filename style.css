@@ -75,7 +75,7 @@ text-align: center;
  .listaPokemon  {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     align-items: center;
     background-color: rgb(231, 231, 231);
@@ -87,8 +87,14 @@ text-align: center;
     width: 280px;
     border-radius: 30px;
     box-shadow: 0px 0px 5px rgb(184, 184, 184);
+    cursor: pointer;
     
  }
+.cardPokemon:hover{
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    transform: scale(1.03);
+}
+
  img{
     width: 150px;
  }
@@ -141,7 +147,7 @@ text-align: center;
 
 /* tipos de pokemon  */
 .tipo{
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: 400;
     border-radius: 20px;
  }
@@ -298,3 +304,32 @@ text-align: center;
     transform: scale(1.1);
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
  }
+ /* modal.style.display = 'none';
+ modal.style.position = 'fixed';
+ modal.style.top = '0';
+ modal.style.left = '0';
+ modal.style.width = '100%';
+ modal.style.height = '100%';
+ modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+ modal.classList.add('modal'); */
+.modalHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.titulo{
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+.modalBody,.modalBody2{
+    display: flex;
+    color: rgb(5, 5, 5);
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 500;
+}
